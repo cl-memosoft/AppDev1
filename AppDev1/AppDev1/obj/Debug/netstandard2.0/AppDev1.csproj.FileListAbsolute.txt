@@ -5,11 +5,6 @@ C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\bin\Debug\netstanda
 C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\AppDev1.csprojAssemblyReference.cache
 C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
-C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
-C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
-C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
-C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
-C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
 C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\AppDev1.AssemblyInfoInputs.cache
 C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\AppDev1.AssemblyInfo.cs
 C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1\obj\Debug\netstandard2.0\AppDev1.csproj.CoreCompileInputs.cache

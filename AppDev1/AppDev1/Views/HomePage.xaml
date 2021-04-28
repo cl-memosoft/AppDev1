@@ -2,62 +2,76 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDev1.Views.HomePage"
-             xmlns:c="clr-namespace:AppDev1.ViewModels" xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:local="clr-namespace:AppDev1"
+             xmlns:model="clr-namespace:AppDev1.Models"
+             xmlns:c="clr-namespace:AppDev1.ViewModels"
              Title="{Binding Title}">
+
     <ContentPage.BindingContext>
         <c:HomeViewModel/>
     </ContentPage.BindingContext>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Color x:Key="Accent">#96d1ff</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
-    <Grid BackgroundColor="CornflowerBlue" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <Grid BackgroundColor="White" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <Grid.RowDefinitions>
             <RowDefinition Height="180" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
 
-        <StackLayout Margin="8,15,8,5" HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="My Shopping List" TextColor="White" HorizontalTextAlignment="Center" FontSize="30" Margin="2,5,2,5" FontAttributes="Bold"/>
-            <Button Margin="2,10,2,10" Text="Add List" FontAttributes="Bold"
-                        BackgroundColor="White"
-                        TextColor="CornflowerBlue" />
+        <StackLayout Grid.Column="0" Margin="8,15,8,5" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="My Shopping List" TextColor="DimGray" HorizontalTextAlignment="Center" FontSize="30" Margin="2,5,2,5" FontAttributes="Bold"/>
+            <Button x:Name="btnListPopup" Clicked="btnListPopup_Clicked" Margin="2,10,2,10" Text="Add List" FontAttributes="Bold"
+                        BackgroundColor="White" BorderColor="#ffaaaf" BorderWidth="2"
+                        TextColor="#ffaaaf" />
         </StackLayout>
+        <StackLayout Grid.Row="1" BackgroundColor="GhostWhite">
+            <StackLayout x:Name="popUpAddListView" BackgroundColor="White" Spacing="3" Padding="13" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="False" Margin="0,50,0,50">
+                <Label Text="Create New List" TextColor="DimGray" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold"/>
+                <StackLayout Orientation="Vertical" HeightRequest="150" WidthRequest="300" BackgroundColor="White">
+                    <StackLayout Padding="0,15,0,0">
+                        <Entry x:Name="ListName" FontSize="Small" Placeholder="List Name" PlaceholderColor="DarkGray" TextColor="DimGray" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="0,20,0,20">
+                        <Button Text="Cancel" x:Name="btnCancelPopup" Clicked="btnCancelPopup_Clicked" HorizontalOptions="FillAndExpand" BackgroundColor="White" TextColor="#ffaaaf" BorderColor="#ffaaaf" BorderWidth="2"/>
+                        <Button Text="Save" x:Name="btnSaveList" HorizontalOptions="FillAndExpand" BackgroundColor="#e8898e"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
 
-        <!--Don't forget to add ItemsSource inside collection view once data binding is done-->
-        <ScrollView Grid.Row="1">
-            <StackLayout BackgroundColor="GhostWhite">
-                <CollectionView Grid.Row="2" Margin="25" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" SelectionMode="None">
-                    <CollectionView.Header>
-                        <Label Text="Grocery List" TextColor="Black" FontSize="18"/>
-                    </CollectionView.Header>
 
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
-                    </CollectionView.ItemsLayout>
-
+            <StackLayout x:Name="MyList" IsVisible="True" VerticalOptions="Center" HorizontalOptions="Center" Margin="15,20,15,30">
+                <!--<ListView ItemsSource="{Binding Lists, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding ListName}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+                <CollectionView x:Name="listCollection" ItemsSource="{Binding Lists}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <pv:PancakeView BackgroundColor="White" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                                <Grid VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <BoxView BackgroundColor="LemonChiffon" WidthRequest="3" HorizontalOptions="Start" VerticalOptions="FillAndExpand"/>
-                                    <!--<expander-->
-                                    <!--Insert expander element here-->
-                                </Grid>
-                            </pv:PancakeView>
+                            <StackLayout BackgroundColor="White"  >
+                                
+                            </StackLayout>
+                            <!--<Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding ListName}" Grid.Row="0" Grid.Column="0" TextColor="DimGray" Padding="10,40,30,10" FontSize="Small" FontAttributes="Bold"/>
+                                <Button Text="Edit" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" BackgroundColor="White" TextColor="#ffaaaf" BorderColor="#ffaaaf" BorderWidth="2"/>
+                                <Button Text="Delete" Grid.Row="0" Grid.Column="2" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" BackgroundColor="#e8898e"/>
+                            </Grid>-->
+
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
-
-        </ScrollView>
+        </StackLayout>
     </Grid>
+
 </ContentPage>

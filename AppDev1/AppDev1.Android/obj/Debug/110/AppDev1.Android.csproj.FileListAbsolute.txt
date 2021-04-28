@@ -606,3 +606,6 @@ C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1.Android\obj\Debug\1
 C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1.Android\obj\Debug\110\android\assets\System.Buffers.dll
 C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1.Android\obj\Debug\110\android\assets\System.Memory.dll
 C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1.Android\obj\Debug\110\android\assets\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1.Android\obj\Debug\110\android\assets\Xamarin.CommunityToolkit.Markup.dll
+C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1.Android\obj\Debug\110\android\assets\MvvmHelpers.dll
+C:\Users\Coleen.Ligasan\source\repos\AppDev1\AppDev1\AppDev1.Android\obj\Debug\110\android\assets\MvvmHelpers.pdb

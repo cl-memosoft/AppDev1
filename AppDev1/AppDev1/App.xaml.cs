@@ -13,9 +13,9 @@ namespace AppDev1
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            DependencyService.Register<ListService>();
 
-            MainPage = new HomePage();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()
@@ -29,5 +29,7 @@ namespace AppDev1
         protected override void OnResume()
         {
         }
+
+       
     }
 }
